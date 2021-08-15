@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생성자</title>
+</head>
+<body>
+    <h2>생성자</h2>
+    <script>
+        'use strict';
+
+        function Dog(name, color){
+            //this: 현재 내 객체의 프로퍼티를 가리킨다
+            this.name = name;
+            this.color = color;
+            this.sleep = function(){
+                console.log(`${this.name}가 잠을 잡니다`);
+            }
+        }
+
+        const Rucy = new Dog('루시', 'white');
+        console.log(Rucy.name);
+        console.log(Rucy.color);
+        Rucy.sleep();
+
+        const PPomi = new Dog('뽀미', '흰색');
+        console.log(PPomi.name);
+        console.log(PPomi.color);
+        PPomi.sleep();
+    </script>  
+</body>
+</html>

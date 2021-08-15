@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype - 2</title>
+</head>
+<body>
+    <h2>prototype - 2</h2>
+    <script>
+        'use strict';
+
+        function Dog(name,age,color){
+            this.name = name;
+            this.age = age;
+            this.color = color;
+        }
+
+        //Dog의 프로타입을 참조하여 만든 객체들의 프로토타입도 변경된다
+        //생성자나 클래스처럼 실제 객체가 아닌 것의 프로토타입을 변경하려면 .property 작성
+        Dog.prototype.family = "포메리안";
+        Dog.prototype.run = function(){
+            return `${this.name}가 달립니다`;
+        }
+        const Rucy = new Dog("루시", 10, "흰색");
+        const PPomi = new Dog("뽀미", 5, "흰색");
+
+        console.log(`이름 : ${Rucy.name}`)
+        console.log(`나이 : ${Rucy.age}`)
+        console.log(`색상 : ${Rucy.color}`)
+        //참조한 프로토타입이 변경사항이 반영된다
+        console.log(`종 : ${Rucy.family}`)
+        console.log(Rucy.run());
+
+        console.log(`이름 : ${PPomi.name}`)
+        console.log(`나이 : ${PPomi.age}`)
+        console.log(`색상 : ${PPomi.color}`)
+        PPomi.family = "폼피치";
+        console.log(`종 : ${PPomi.family}`)
+        console.log(PPomi.run());
+    </script>
+    
+</body>
+</html>

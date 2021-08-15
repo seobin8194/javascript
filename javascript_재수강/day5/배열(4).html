@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 - 4</title>
+</head>
+<body>
+    <h2>배열 - 4</h2>
+    <script>
+        'use strict';
+        let arr1 = ['김사과', 20, 160.5, true];
+        console.log(arr1);
+
+        //크기가 느는거
+        //배열을 복사해서 추가
+        //속도가 느리다
+        arr1.push('여자');
+        console.log(arr1);
+
+        //크기를 줄이는거
+        //기존 배열에서 제거
+        //속도와 상관없다
+        arr1.shift();
+        console.log(arr1);
+
+        let arr2 = ['김사과', '서울', '학생'];
+
+        let arr = arr1.concat(arr2);
+        console.log(arr);
+
+        //리턴 타입은 문자열
+        arr = arr.join(" ");
+        console.log(arr);
+
+        arr2 = arr2.join("|");
+        console.log(arr2);
+
+        let arr3 = ['c','d','a','z','o'];
+        arr3.sort();
+        console.log(arr3);
+
+        arr3.reverse();
+        console.log(arr3);
+    </script>
+</body>
+</html>

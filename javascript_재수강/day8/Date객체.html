@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date 객체</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        console.log(new Date());
+        console.log(new Date(21, 4, 4));//1921년 5월 4일
+        console.log(new Date(2021, 4, 4, 11, 56, 0));//2021년 4월 4일 11시 56분 00초
+        console.log(new Date(400000000000));//Sun Sep 05 1982 00:06:40
+
+        const date = new Date();
+        console.log(`현재 년도는 ${date.getFullYear()}`)
+        console.log(`현재 월은 ${date.getMonth()}`)
+        console.log(`현재 일은 ${date.getDate()}`)
+        console.log(`현재 시간은 ${date.getHours()}`)
+        console.log(`현재 분은 ${date.getMinutes()}`)
+        console.log(`현재 초은 ${date.getSeconds()}`)
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prototype - 1</title>
+</head>
+<body>
+    <h2>prototype - 1</h2>
+    <script>
+        'use strict';
+
+        function Dog(name, age, color){
+            this.name = name;
+            this.age = age;
+            this.color = color;
+        }
+
+        const Rucy = new Dog("루시", 10, "흰색");
+
+       console.log(`이름은 ${Rucy.name}`);
+       console.log(`나이는 ${Rucy.age}`);
+       console.log(`색상은 ${Rucy.color}`);
+       console.log(Rucy);//prototype 출력
+
+       
+       //내게 저장된 prototype을 변형
+        /*
+       Dog   ----------> Rucy
+       name  ----------> name
+       age   ----------> age
+       color ----------> color
+                        family추가
+       */
+       Rucy.family = "포메리안";
+       Rucy.run = function(){
+           return `${this.name}는 달립니다`;
+       }
+      
+    const PPomi = new Dog("뽀미", "흰색");
+    console.log(`이름은 ${PPomi.name}`);
+    console.log(`나이는 ${PPomi.age}`);
+    console.log(`색상은 ${PPomi.color}`);
+
+    console.log(`루시 종은 ${PPomi.family}`);
+    //뽀미는 dog의 프로토타입을 상속받아 생성되었고 family는 Rucy의 포로토타입에 추가되었으므로 뽀미는 변경되지 않는다
+    console.log(`뽀미 종은 ${PPomi.family}`);
+
+    console.log(Rucy.run());
+    console.log(PPomi.run());
+    </script>
+    
+</body>
+</html>

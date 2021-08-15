@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>노드추가</title>
+</head>
+<body>
+    <h2>노드추가</h2>
+    <p id="item1">javaScript</p>
+    <p id="item2">php</p>
+    <hr/>
+    <div id="list">
+        <p id="js">node.js</p>
+        <p>react</p>
+    </div>
+    <hr/>
+    <p id="text">지금 시간은 오전 10시 30분입니다</p>
+
+    <button onclick="appendNode()">노드추가1</button>
+    <button onclick="insertNode()">노드추가2</button>
+    <button onclick="appendText()">텍스트 추가</button>
+
+    <script>
+        'use strict';
+
+        const appendNode = function(){
+            //태그를 선택해 저장하면 해당 위치정보(노드 객체)를 저장한다
+            const parent = document.getElementById('list');
+            const newItem = document.getElementById('item1');
+
+            //위치정보(노드)를 갖고 있으므로 이를 활용하여 dom을 동적으로 조절할 수 있다
+            //newItem을 잘라서 붙여넣는다
+            parent.appendChild(newItem);
+        }
+
+        const insertNode = function(){
+            const parent = document.getElementById('list');
+            const js = document.getElementById('js');
+            const newItem = document.getElementById('item2');
+
+            //newItem을 잘라서 붙여넣는다
+            parent.insertBefore(newItem, js);
+        }
+
+        const appendText = function(){
+            const text = document.getElementById('text').firstChild;
+            text.insertData(7, '아주 외로운 '); 
+        }
+    </script>
+</body>
+</html>

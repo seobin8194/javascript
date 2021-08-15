@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배열 - 3</title>
+</head>
+<body>
+    <h2>배열 - 3</h2>
+    <script>
+        'use strict';
+        const cnt = Number(prompt('입력받을 숫자의 개수를 입력하세요'));
+        let idx = 0;
+        let arr = [];
+
+        while(idx < cnt){
+            arr[idx] = Number(prompt(`${idx+1}번째 숫자를 입력하세요`));
+            idx++;
+        }
+
+        //알고리즘: 어떻게 프로그램을 효율적으로 만드나
+        //입력받은 숫자 중 최대, 최소 값구하기
+        let max = arr[0];
+        let min = arr[0];
+
+        for(let i = 1; i < arr.length; i++){
+            if(max < arr[i]){
+                max = arr[i];
+            }
+            if(min > arr[i]){
+                min = arr[i];  
+            }
+        }
+
+        //객체가 생성되면 최소한의 기능을 물려받아 생성된다
+        //배열이름 : 객체 내 데이터 확인 가능
+        console.log(`입력한 수 ${arr}에서 가장 큰 값은 ${max}입니다.`);
+        console.log(`입력한 수 ${arr}에서 가장 작은 값은 ${min}입니다.`);
+    </script>
+</body>
+</html>

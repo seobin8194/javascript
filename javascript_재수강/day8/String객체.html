@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String 객체</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        const str1 = "안녕하세요. JavaScript";
+
+        console.log(str1.length);//17
+
+        console.log(str1.indexOf('J'));//7
+        //첫글자에 대한 인덱스를 리턴
+        console.log(str1.indexOf('Java'));//7
+        //대소문자를 구분하며 찾지 못했을 경우 -1 리턴
+        console.log(str1.indexOf('java'));//-1
+        //앞에서부터 탐색
+        console.log(str1.indexOf('a'));//8
+        //뒤에서부터 탐색
+        console.log(str1.lastIndexOf('a'))//10
+
+        console.log(str1.charAt(7));//J
+
+        console.log(str1.includes('Java'));//true
+        //대소문자를 구분한다
+        console.log(str1.includes('java'));//false
+
+        //매개변수가 한개일 경우 해당 인덱스부터 끝까지 문자열을 추출
+        console.log(str1.substring(7));//JavaScript
+        //인덱스 7부터 11직전까지 추출
+        console.log(str1.substring(7, 11));//Java
+
+        //인덱스 7부터 4글자 추출
+        console.log(str1.substr(7,4));//Java
+
+        const str2 = "드라이브,영화감상,게임,쇼핑,잠자기,여행";
+        const hobby = str2.split(",");
+        /*
+            hooby[0] = "드라이브"
+            hooby[1] = "영화감상"
+            hooby[2] = "게임"
+            hooby[3] = "쇼핑"
+            hooby[4] = "잠자기"
+            hooby[5] = "여행"
+        */
+       for(let h of hobby){
+           console.log(h);
+       }
+       hobby.forEach(function(val, idx, arr){
+           console.log(`값은 ${val} 인덱스는 ${idx} 배열은 ${arr}`);
+       });
+
+       console.log(str1.replace('안녕하세요.', 'hello!'));
+
+       const str3 = '          JavaScript          ';
+       console.log(`|${str3}|`);
+       console.log(`|${str3.trim()}|`);
+
+       console.log(str3.toLowerCase());
+       console.log(str3.toUpperCase());
+    </script>  
+</body>
+</html>

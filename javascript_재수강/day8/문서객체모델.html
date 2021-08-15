@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="dom">문서객체모델</h2>
+    <ul>
+        <li class="front">HTML</li>
+        <li class="front">css</li>
+        <li class="front">jvascript</li>
+        <li class="front">jquery</li>
+        <li class="serverside">php</li>
+        <li>node.js</li>
+        <li class="front">react.js</li>
+    </ul>
+    <script>
+        'use strict';
+    
+        const tagName = document.getElementsByTagName('li');
+        //선택된 요소는 배열형태로 저장된다
+        for(let i=0; i<tagName.length; i++){
+            tagName[i].style.color = "gold";
+        }
+
+        const id = document.getElementById('dom');
+        id.style.color = "deeppink";
+
+        const className = document.getElementsByClassName('front');
+        for(let i=0; i<className.length; i++){
+            className[i].style.color = "deepskyblue";
+        }
+
+        const querySelector = document.querySelectorAll('li.serverside');
+        for(let i=0; i<querySelector.length; i++){
+            querySelector[i].style.color = "red";
+        }
+    </script>
+</body>
+</html>

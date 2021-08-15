@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>함수 - 3</title>
+    <script>
+        'use strict';
+        function getHello(){
+            return 'Hello :)';
+        }
+
+        function getSum(num1, num2){
+            return num1 + num2;
+        }
+
+        function add(num1, num2){
+            return num1 + num2;    
+        }
+
+        function minus(num1, num2){
+            return num1 - num2;
+        }
+
+        function multiple(num1, num2){
+            return num1 * num2;
+        }
+
+        function division(num1, num2){
+            return num1 / num2;
+        }
+    </script>
+</head>
+<body>
+    <h2>함수 - 3</h2>
+    <script>
+        'use strict';
+        console.log(getHello());
+        const msg = getHello();
+        console.log(msg);
+
+        const sum = getSum(10, 3);
+        console.log(sum);
+
+        const num1 = Number(prompt('첫번째 숫자를 입력하세요'));
+        const num2 = Number(prompt('두번째 숫자를 입력하세요'));
+
+        console.log(`${num1} + ${num2} = ${add(num1, num2)}`);
+        console.log(`${num1} - ${num2} = ${minus(num1, num2)}`);
+        console.log(`${num1} * ${num2} = ${multiple(num1, num2)}`);
+        console.log(`${num1} / ${num2} = ${division(num1, num2)}`);
+    </script>
+</body>
+</html>
