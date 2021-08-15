@@ -1,0 +1,88 @@
+<!-- 
+    선택자를 이용하여 문서요소에 접근한다
+    document.getElementsByTagName('요소이름') -> $('요소이름')
+    document.getElementById('id') -> $('#id')
+    document.getElementsByClassName('class이름') -> $(.class이름)
+    ...
+
+    on()
+    addEventListener()와 비슷한 함수
+    이벤트핸들러와 이벤트 타깃을 연결합니다
+
+    css()
+    css 속성에 속성값을 설정합니다
+    속성에 대한 이름은 카멜표기법을 사용합니다
+    - 스네이크 표기법
+      font-size border-color
+    - 카멜 표기법
+      fontSize borderColor
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <script src="./jquery-3.5.1.min.js"></script>
+ </head>
+ <body>
+     <p>
+         오픈소스 기반의 자바스크립트 라이브러리입니다. <span>제이쿼리</span>를 이용하면 문서객체 모델(DOM)과 이벤트 처리를 좀 더 쉡게 구현할 수 있습니다. 또한 AJAX 응용 프로그램도 <span>제이쿼리</span>를 통해 뻐르게 개발이 가능합니다
+         <h3 id="jq"><span>아이디</span>를 사용하면 특정 <span>html</span>요소를 선택할 수 있습니다</h3>
+     </p>
+
+     <header id="header">
+        <div class="logo">로고</div>
+        <div class="reg">회원가입</div>
+        <nav id="gnb">
+            <ul>
+                <li>
+                    메뉴1
+                    <ul><li>서브메뉴</li></ul>
+                </li>
+            </ul>
+        </nav>
+        <div id="visual">
+            <p>메인비주얼</p> 
+        </div>
+        <div id="content">
+            <div class="left">왼쪽 영역</div>
+            <div class="right">오른쪽영역</div>
+            <div class="center">가운데 영역</div>
+        </div>
+        <div id="banner">배너</div>
+        <div id="footer">푸터</div>
+    </header>
+     <script>
+         $(function(){
+             //p태그 클릭하면 글씨가 커진다
+             $('p').on('click',function(){
+                 $('span').css('fontSize','40px');
+             });
+             //#jq클릭하면 span태그로 감싼 텍스트에 테두리가 생긴다
+             $('#jq').on('click',function(){
+                 $('span').css('border','3px solid deepskyblue')
+             });
+         });
+
+         //#jq의 span은 딥핑크 테두리를 입힌다
+         $(function(){
+             $('#jq span').css('border', '3px solid deeppink')
+         })
+     </script> 
+
+    <script>
+        $(function(){
+            $('#visual p').css('border', '3px solid red')
+            $('#gnb').css('border','3px solid gold')
+            $('.logo').css('border','3px solid blue')
+            $('#gnb > ul > li').css('border','3px solid green')
+            $('#gnb > ul').css('border','3px solid navy')
+            $('#visual + #content').css('border','3px solid deeppink')
+            $('#visual ~ #footer').css('border','3px solid purple')
+            $('div.reg').css('border','3px solid orange')
+            $('.left, .right, #banner').css('border','3px solid gray')
+        })
+    </script>
+ </body>
+ </html>

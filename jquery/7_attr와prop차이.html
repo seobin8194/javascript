@@ -1,0 +1,41 @@
+<!-- 
+    attribute와 property차이
+    property
+    <input type="checkbox" name="hobby" value="여행" checked>
+    attribute
+    <input type="checkbox" name="hobby" value="여행" checked="checked">
+
+    attr() : 해당 요소의 명시된 속성의 속성값을 반환하거나 설정
+    prop() : 제이쿼리 1.6부터 정의된 메소드
+             선택한 요소집합의 첫번째 요소의 지정된 프로퍼티 값을 반환하거나 선택한 요소의 지정된 프로퍼티를 전달받은 값으로 설정
+
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <script src="./jquery-3.5.1.min.js"></script>
+ </head>
+ <body>
+    <input type="checkbox" id="html"><label for="html">HTML</label>
+    <input type="checkbox" id="css"><label for="css">CSS</label>
+    
+    <script>
+        $(function(){
+            console.log($('input:checkbox').eq(0).attr('checked'));//undefined : checked 속성이 없음
+            console.log($('input:checkbox').eq(0).prop('checked'));//false : checked안됨
+
+            $('input:checkbox').eq(0).attr('checked', 'checked');//attribute : checked 속성 추가
+            $('input:checkbox').eq(1).prop('checked', true);//property : checked함
+
+            console.log($('input:checkbox').eq(0).attr('checked'));//checked : checked 속성 값 출력
+            console.log($('input:checkbox').eq(0).prop('checked'));//true : checked됐으므로 true
+            console.log($('input:checkbox').eq(1).attr('checked'));//undefined : checked 속성 없음
+            console.log($('input:checkbox').eq(1).prop('checked'));//true : checked됐으므로 true
+        })
+    </script>
+     
+ </body>
+ </html>

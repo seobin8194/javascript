@@ -1,0 +1,60 @@
+<!-- 
+    메소드체이닝
+    getter메소드는 선택된 요소의 값을 읽어서 그 값을 반환합니다
+    만약 선택한 요소가 여러개 존재하면 가장 첫번째 요소의 값만 반환한다
+    반면 setter메소드는 선택된 모든 요소에 인수로 전달된 값을 설정한다
+    그리고 선택된 모든 요소에 접근할 수 있는 또 다른 제이쿼리 객체를 반환한다
+    반환된 객체를 이용하면 세미콜론을 사용하지 않아도 바로 다른 제이쿼리 메소드를 점으로 연결해서 호출할 수 있다
+    이런 방식으로 여러 메소드를 연속적으로 호출하는 방식을 메소드 체이닝이라고 한다 
+
+    add() : 특정 요소를 추가로 선택할때 사용
+    addBack() : 현재 선택된 요소와 함께 이전에 선택한 요소도 선택
+    children() : 매개변수로 전달된 요소를 하위요소에서 찾는다. 매개변수를 전달하지 않으면 하위요소의 모든 요소를 선택
+    find() : 선택한 요소의 자손요소 중에서 전달받은 선택자에 해당하는 자손요소를 모두 선택
+             별표를 인수로 전달하여 자손요소를 모두 선택할 수도 있다
+    end() : 현재의 연속적인 명령(메소드 체이닝)을 종료하고 선택 집합의 첫번째 요소를 찾아서 반환
+    is() : 인수로 전달된 요소가 존재하는지 여부(true false)를 리턴
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <script src="./jquery-3.5.1.min.js"></script>
+ </head>
+ <body>
+    <div id="m1">
+        <div>내용 1-1</div>
+        <p>내용 1-2</p>
+    </div>
+    <div id="m2">
+        <p>내용</p>
+    </div>
+    <div id="m3">
+        <span>내용 3-1</span>
+        <em><span>내용 3-2</span></em>
+    </div>
+    <div id="m4">
+        <p>내용 4</p>
+    </div>
+
+    <script>
+        $(function(){
+            //add()
+            $('#m1 > div').add('#m1 > p').css('border', '3px solid red')
+            //children() addBack()
+            $('#m2').children('p').addBack().css('border','3px solid deeppink')
+            //find() end()
+            //end()를 만나면 $('#m3').find('em')
+            $('#m3').find('span').css('border','3px solid deepskyblue').end().find('em').css('border','3px solid yellow')
+            //is()
+            if($('#m4').children().is('p')){
+                console.log('p요소가 존재합니다')
+            }else{
+                console.log('p요소가 존재하지 않습니다')
+            }
+        })
+    </script>
+ </body>
+ </html>
