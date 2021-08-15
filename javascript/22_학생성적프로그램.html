@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        //if문을 이용한 학생성적 프로그램
+        // const name = prompt("이름을 입력하시오");
+        // const kor = Number(prompt("국어 성적을 입력하시오"));
+        // const math = Number(prompt("수학 성적을 입력하시오"));
+        // const eng = Number(prompt("영어 성적을 입력하시오"));
+        // const sum = kor + math + eng;
+        // const avg = sum / 3;
+
+        // let grade;
+        // if(avg >= 90){
+        //     grade = "A학점";
+        // }else if(avg >= 80){
+        //     grade = "B학점"
+        // }else if(avg >= 70){
+        //     grade = "C학점"
+        // }else if(avg >= 60){
+        //     grade = "D학점"
+        // }else {
+        //     grade = "F학점"
+        // }
+
+        // document.write(`<p>${name}의 성적표</p>
+        //                 <p>국어점수 : ${kor}</p>
+        //                 <p>수학점수 : ${math}</p>
+        //                 <p>영어점수 : ${eng}</p>
+        //                 <p>총점 : ${sum}</p>
+        //                 <p>평균 : ${avg}</p>
+        //                 <p>학점 : ${grade}</p>`);
+
+        //switch문을 이용한 학생성적 프로그램
+        const name = prompt("이름을 입력하시오");
+        const kor = Number(prompt("국어 성적을 입력하시오"));
+        const math = Number(prompt("수학 성적을 입력하시오"));
+        const eng = Number(prompt("영어 성적을 입력하시오"));
+        const sum = kor + math + eng;
+        const avg = sum / 3;
+
+        let grade;
+        switch(parseInt(avg/10)){
+            case 10:
+            case 9:
+               grade = "A학점";
+               break;
+            case 8:
+               grade = "B학점";
+               break;
+            case 7:
+               grade = "C학점";
+               break;
+            case 6:
+               grade = "D학점";
+               break;
+            default:
+                grade = "F학점"
+                break;
+        }
+      
+        document.write(`<p>${name}의 성적표</p>
+                        <p>국어점수 : ${kor}</p>
+                        <p>수학점수 : ${math}</p>
+                        <p>영어점수 : ${eng}</p>
+                        <p>총점 : ${sum}</p>
+                        <p>평균 : ${avg}</p>
+                        <p>학점 : ${grade}</p>`);
+    </script>
+</body>
+</html>

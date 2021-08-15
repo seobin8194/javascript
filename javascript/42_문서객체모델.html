@@ -1,0 +1,97 @@
+<!-- 
+    문서객체모델 (Document Object Model)
+    html 문서나 xml문서 등을 접근하기 위한 일종의 인터페이스
+    이 모델은 문서 내의 모든 요소를 정의하고 요소 각각에 접근하는 방법을 제공
+
+    html 트리
+    <html lang="en">
+    <head>
+        <title>text</title>
+    </head>
+    <body>
+        <h2>text</h2>
+        <p id="sub">text</p>
+    </body>
+    </html>
+     
+          document 객체
+          <html> - lang
+   <head>               <body>
+   <title>           <h2>     <p>
+     text            text     text  
+   -> html 트리에 접근하는 방법들을 dom이라고 한다
+
+   document 객체
+   웹 페이지 자체를 의미하는 객체
+   웹 페이지에 존재하는 html요소에 접근할때 반드시 document 객체부터 시작한다
+
+   html요소에 접근하기
+   getElementByTagName() : 해당 태그 이름의 요소를 모드 선택
+   getElementById() : 해당 아이디의 요소 하나를 선택
+   getElementsByClassName() : 해당 클래스에 속하는 요소들 모두 선택
+   getElementsByName() : 해단 name 속성값을 가지는 요소 모두 선택
+   querySelectorAll() : 해당 선택자로 선택되는 요소 모두 선택(css)
+
+   item() : html 요소 리턴
+   
+   요소에 스타일 적용하기
+   요소.style.속성 = 속성값
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+    <ul>
+        <li name="model">html</li>
+        <li>css</li>
+        <li id="js" class="js">javascript</li>
+        <li id="js" class="js">jquery</li>
+        <li class="server">apache</li>
+        <li class="server">php</li>
+        <li class="server">mysql</li>
+        <li id="js" class="js">node.js</li>
+        <li id="js" class="js">react</li>
+    </ul>
+    <script>
+        'use strict'
+        //getElementsByTagName()
+        const tagName = document.getElementsByTagName('li')
+        for(let i = 0; i <= tagName.length; i++){
+            console.log(tagName[i])
+            //item() : html 요소 리턴
+            //tagName[i] = tagName.item(i)
+            tagName.item(i).style.color = "gold"
+        }
+
+        //getElementsByClassName()
+        const className = document.getElementsByClassName("js")
+        for(let i = 0; i < className.length; i++){
+            console.log(className[i])
+            className.item(i).style.color = "deepSkyblue"
+        }
+
+        //getElementById()
+        //id에 해당하는 요소가 여러개 있어도 하나만 선택
+        const id = document.getElementById('js')
+        id.style.color = 'deeppink'
+
+        //getElementsByName()
+        const name = document.getElementsByName('model')
+        for(let i = 0; i < name.length; i++){
+            console.log(name[i])
+            name.item(i).style.color = "red"
+        }
+
+        //querySelectorAll()
+        const querySelector = document.querySelectorAll('li.server');
+        for(let i = 0; i < querySelector.length; i++){
+            console.log(querySelector[i])
+            querySelector.item(i).style.color = "blue"
+        }    
+    </script>  
+ </body>
+ </html>

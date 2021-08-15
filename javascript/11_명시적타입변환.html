@@ -1,0 +1,35 @@
+<!-- 
+    명시적 타입 변환
+    자바스크립트는 자동 타입변환을 사용하지만 종종 명시적으로 타입을 변환할 필요가 있다
+    서버에서 값을 가져 온 경우나 문자열로 넘어오는 prompt창에서 사용자가 입력한 값을 계산하고 싶은 경우를 예로 들 수 있다
+
+    Number() : 문자를 숫자로 변경
+    String() : 숫자나 불린 등을 문자형으로 변환
+    Boolean() : 문자나 숫자 등을 불린형으로 변환
+                "안녕"을 불린으로 바꾸면 true -> 0이 아닌 모든 값은 true
+    Object() : 모든 자료형을 객체형으로 변환
+               여러 데이터를 저장할 수 있게 됨
+    parseInt() : 문자를 int형으로 변환(정수)
+                 소수점 버려짐
+    parseFloat() : 문자를 float형으로 변환(실수)
+                   소수점 살림
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+     <script>
+         'use strict';
+         const num1 = "10";
+         const num2 = "5";
+         console.log(`현재 num1과 num2의 타입 : ${typeof num1}, ${typeof num2}`);
+         console.log(`num1 + num2 = ${num1 + num2}이고 타입은 ${typeof (num1+num2)}`)
+         console.log(`Number(num1) + Number(num2) = ${Number(num1) + Number(num2)} 타입은 ${typeof (Number(num1) + Number(num2))}`)
+         Number(num1 + num2) // 105 숫자
+     </script>
+ </body>
+ </html>

@@ -1,0 +1,83 @@
+<!--
+    Stirng 객체
+    문자열을 손쉽게 만들 수 있고 다룰 수 있는 객체
+
+    length 프로퍼티 : 문자열의 길이를 저장
+
+    메소드
+    indexOf() : 특정 문자나 문자열이 처음 등장하는 위치를 리턴
+    lastIndexOf() : 특정 문자나 문자열이 마지막으로 등장하는 위치를 리턴
+    charAt() : 특정 문자열에 전달받은 인덱스에 위치하는 문자를 리턴
+    includes() : 특정 문자열에 전달받은 문자열이 포함되어 있는지 여부를 리턴
+    subString() : 전달받은 시작 인덱스부터 종료 인덱스 바로 앞까지 문자욜을 추출하여 새로운 문자열을 리턴
+    subStr() : 전달받은 시작 인덱스부터 전달받은 개수만큼 문자열을 추출하여 새로운 문자열을 리턴
+    split() : 구분자를 기준으로 나눈 후 나뉜 문자열을 하나의 배열에 저장
+    replace() : 원본 문자열의 일부를 전달받은 문자열로 치환
+    trim() : 문자열의 앞뒤 공백 제거
+    toUpperCase() : 영문자 중 소문자를 대문자로 변환
+    toLowerCase() : 영문자 중 대문자를 소문자로 변환
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict'
+        const str1 = 'javascript'
+        const str2 = new String('javascript')
+        console.log(str1 == str2)//true
+        console.log(str1 === str2)//false
+
+        const str3 = "안녕하세요 Javascript"
+        console.log(str3.length)
+
+        //indexOf() & lastIndexOf()
+        console.log(str3.indexOf('J'))
+        console.log(str3.indexOf('Java'))//첫 글자의 인덱스
+        console.log(str3.indexOf('a'))
+        console.log(str3.lastIndexOf('a'))
+        console.log(str3.lastIndexOf('j'))//찾지 못할 경우 -1
+
+        //charAt()
+        console.log(str3.charAt(6))
+
+        //includes()
+        console.log(str3.includes('Java'))
+        console.log(str3.includes('java'))//false
+
+        //substring() & substr()
+        console.log(str3.substring(6))//인수가 1개일 경우 해당 인덱스부터 끝까지 추출
+        console.log(str3.substring(6,10))//(시작인덱스, 종료인덱스)
+        console.log(str3.substr(6,4))//(시작인덱스, 개수)
+
+        const str4 = "여행,노래듣기,드라이브,유튜브,그림그리기,운동"
+        const hobby = str4.split(',')
+        /*
+        hobby[0] = "여행"
+        hobby[1] = "노래듣기"
+        ...                */
+       for(let i of hobby){
+           console.log(i)
+       }
+       hobby.forEach(function(h,idx,arr){
+           console.log(h, idx, arr[idx])
+       });
+
+       //replace()
+       console.log(str3.replace('안녕하세요','hello'))
+
+       //trim()
+       const str5 = '         javaScript        '
+       console.log(str5)
+       console.log(str5.trim())
+
+       //대소문자
+       console.log(str3.toUpperCase());
+       console.log(str3.toLowerCase());
+    </script>  
+</body>
+</html>

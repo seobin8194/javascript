@@ -1,0 +1,44 @@
+<!-- 
+    문자열형(Stirng)
+    자바스크립트에서는 문자열은 ""나 ''로 둘러싸인 문자의 집합을 의미
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+     <script>
+         //''출력
+         const str1 = "'hi'";
+         //"" 출력
+         const str2 = '"hi"';
+         //"" 출력
+         const str3 = "\"hi\"";
+         const str4 = `자바스크립트에서는 문`;
+         console.log(str1);
+         console.log(str2);
+         console.log(str3);
+
+        const num1 = 10;
+        const num2 = 5;
+        const str5 = "hello";
+        const str6 = "hi";
+        //숫자는 계산이 가능하다
+        console.log(num1 + num2);
+        //문자와 연산하면 결합된다
+        console.log(num1 + str5);
+        console.log(str5 + " " + str6)
+
+        //``이용하면 굳이 안 나눠도 된다
+        console.log("str1 : " + str1 +  ", str2 : " +  str2);
+        console.log(`str1 : ${str1}, str2 : ${str2}`);
+        //내가 친대로 결과가 나온다
+        const str7 = `자바스크립트에서는 문자열을 쌍따옴표나 따옴표로
+                        둘러 싸인 문자의 집합을 의미합니다` ; 
+        console.log(str7);
+     </script>
+ </body>
+ </html>

@@ -1,0 +1,43 @@
+<!-- 노드교체
+    replaceChild() : 기존의 요소노드를 새로운 요소노드로 교체
+                     교체된 노드 = 부모노드.replaceChild(새로운 자식노드, 기존 자식노드)
+    replaceData() : 텍스트 노드의 텍스트 데이터를 바꾼다
+                    텍스트 노드.replaceData(오프셋, 교체할 문자 수, 새로운 데이터)
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+    <div id="parent">
+        <p id="first">사과</p>
+        <p>바나나</p>
+        <p>귤</p>
+    </div>
+    <p id="second">메론</p>
+    <hr>
+    <p id="text">좋아하는 과일은 사과입니다</p>
+    <button onclick="changeNode()">노드교체</button>
+    <button onclick="changeText()">텍스트교체</button>
+
+    <script>
+        'use strict'
+        //parent.replaceChild(newNode, originNode)
+        const changeNode = function(){
+            const parent = document.getElementById('parent');
+            const first = document.getElementById('first')
+            const second = document.getElementById('second')
+            parent.replaceChild(second, first)
+        }
+
+        //textNode.replaceData(offset,교체할 문자수,새 텍스트)
+        const changeText = function() {
+            const text = document.getElementById('text').firstChild
+            text.replaceData(9,2,'딸기')
+        }
+    </script>  
+ </body>
+ </html>

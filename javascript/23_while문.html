@@ -1,0 +1,67 @@
+<!-- 
+    반복문 
+    프로그램 내에서 같은 명령을 일정 횟수만큼 반복하여 수행하도록 제어하는 실행문
+
+    반복문 - while문
+    특정 조건식을 만족하는 동안 계속해서 실행문을 반복한다
+    while(조건식){
+        조건의 결과가 참인 동안 반복될 실행문
+        조건식을 거짓으로 변경할 실행문
+    }
+
+    반복문 - do ~ while문
+    while문은 루트에 집입하기 전에 먼저 조건식부터 검사를 한다
+    하지만 do ~ while문은 먼저 루트를 한번 실행한 후에 조건식을 검사한다
+    do{
+        조건식의 결과가 참인 동안 반복될 실행문
+        조건식을 거짓으로 변경할 실행문
+    } while(조건식);
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+     <script>
+         'use strict'
+         //while문
+         //i가 6이 되고 난 후 반복문을 빠져나간다
+        //  let i = 1;
+        //  while(i <= 5){
+        //      console.log("hello")
+        //      i++;
+        //  }
+
+         //while문 - 1부터 10까지의 합 구하기
+        //  let i = 1;
+        //  let sum = 0;
+        //  while(i <= 10){
+        //      sum += i;
+        //      i++
+        //  }
+        //  console.log(`총합 : ${sum}`);
+
+         //while문 - 1부터 100까지의 짝수의 합
+        //  let i = 2;
+        //  let sum = 0;
+        //  while(i <= 100){
+        //      sum += i;
+        //      i += 2;
+        //  }
+        //  console.log(`짝수의 합 : ${sum}`)
+
+        //do ~ while문 
+        let i = 1;
+        do{
+            console.log(`j : ${i++}`);
+        }while(j > 3);
+
+
+
+     </script>
+     
+ </body>
+ </html>

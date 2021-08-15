@@ -1,0 +1,52 @@
+<!-- 
+    Location 객체
+    현재 브러우저에 표시된 html 문서의 주소를 얻거나 브라우저에 새 문서를 불러올때 사용한다
+    브러우저의 url창과 관련
+    
+    href : 페이지의 url 전체 정보를 반환
+           url을 지정하여 해당 페이지로 이동
+    protocol : 콜론을 포함하는 http https ftp 등 프로토콜 정보를 반환
+    hostName : 호스트이름과 포트번호 반환
+    pathName : url 경로부분 정보 반환
+    http://www.naver.com/blog/ryuzy.nhn
+    -----  ------------- --------------
+    protocol  hostName     pathName
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //페이지 이동
+        const sendit = function(){
+            const frm = document.myForm;
+            if(frm.site.value == 'naver'){
+                location.href = "https://www.naver.com"
+            }else if(frm.site.value == 'daum'){
+                location.href = "https://www.daum.net"
+            }else if(frm.site.value == 'google'){
+                location.href = "https://www.google.com"
+            }
+        }
+    </script>
+</head>
+<body>
+    <script>
+        'use strict'
+        //url 정보
+        console.log(location.href)
+        console.log(location.protocol)
+        console.log(location.hostname)
+        console.log(location.pathname)
+    </script>
+
+    <form name="myForm">
+        <p><label>네이버 <input type="radio" value="naver" name="site"></label></p>
+        <p><label>다음 <input type="radio" value="daum" name="site"></label></p>
+        <p><label>구글 <input type="radio" value="google" name="site"></label></p>
+        <p><input type="button" value="이동" onclick="sendit()"></p>
+    </form>  
+</body>
+</html>

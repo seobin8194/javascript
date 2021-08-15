@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict'
+        const printTime = function(){
+            const today = new Date()
+            const hh = today.getHours();
+            const mm = today.getMinutes()
+            const ss = today.getSeconds()
+            document.getElementById('result').innerHTML = hh + " : " + mm + " : " + ss;
+        }
+
+        let timeId = null;
+        const startClock = function(){
+            timeId = setInterval(printTime, 500);
+        }
+        const stopClock = function(){
+            clearInterval(timeId)
+        } 
+    </script>
+    <div id="result"></div>
+    <p><input type="button" value="시작" onclick="startClock()"> <input type="button" value="중지" onclick="stopClock()"></p>
+</body>
+</html>

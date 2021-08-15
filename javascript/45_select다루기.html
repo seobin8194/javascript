@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="sel">
+        <option value="0">선택하시오</option>
+    </select>
+    <button onclick="setSelection()">값 지정</button>
+
+    <script>
+        'use strict'
+        const fruitList = [
+            {oKey:'apple', oVal:'사과'},
+            {oKey:'peach', oVal:'복숭아'},
+            {oKey:'orange', oVal:'오렌지'}
+        ]
+        const targetSel = document.getElementById('sel')
+        const setSelection = function(){
+            fruitList.forEach(function(list, i){
+                console.log(list, i)
+                const opt = document.createElement('option')//<option></option>
+                //setAttribute(속성, 속성값)
+                opt.setAttribute('value', list.oKey)//<option value="apple"></option>
+                //innerText : 요소 내 텍스트 지정
+                opt.innerText = list.oVal//<option value="apple">사과</option>
+                targetSel.appendChild(opt)
+            })
+        }
+    </script>
+</body>
+</html>

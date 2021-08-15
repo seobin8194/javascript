@@ -1,0 +1,51 @@
+<!-- 
+    노드생성
+    createElement() : 새로운 요소노드를 만들 수 있다
+    createAtrribute() : 새로운 속성 노드를 만들 수 있다
+                        만약 같은 이름인 속성노드가 이미 있다면 기존 속성노드는 새로운 속성노드로 대체된다
+    createTextNode() : 새로운 텍스트 노드를 만들 수 있다
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+    <p id="el">새로운 문장이 이 문장 앞에 추가된다</p>
+    <p id="attr">이 단락에 새로운 속성이 추가</p>
+    <p id="text"></p>
+
+    <button onclick="createNode()">요소 생성</button>
+    <button onclick="createAttr()">속성 생성</button>
+    <button onclick="createText()">텍스트 생성</button>
+
+    <script>
+        'use strict'
+        //createElement()
+        //innerHTML : 요소안에 html 코드 삽입
+        const createNode = function(){
+            const elNode = document.getElementById('el');
+            const newNode = document.createElement('p')//<p></p>
+            newNode.innerHTML = "<b>새로운 요소입니다</b>"//<p><b>새로운 요소입니다</b></p>
+            document.body.insertBefore(newNode, elNode)
+        }
+        //createAttribute()
+        //value : css속성값에 접근
+        //setAttributeNode() : 요소에 속성추가
+        const createAttr = function(){
+            const attrNode = document.getElementById('attr')
+            const newAttr = document.createAttribute('style')//style = ""
+            newAttr.value = "color:deeppink"//style = "color:deeppink"
+            attrNode.setAttributeNode(newAttr)//<p id="attr" style = "color:deeppink">이 단락에 새로운 속성이 추가</p>
+        }
+        //createTextNode()
+        const createText = function(){
+            const textNode = document.getElementById('text')
+            const newText = document.createTextNode('새로운 텍스트')
+            textNode.appendChild(newText)
+        }
+    </script> 
+ </body>
+ </html>

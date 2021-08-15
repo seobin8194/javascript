@@ -1,0 +1,78 @@
+<!-- 
+    노드
+    html DOM은 노드라는 계층적 단위에 정보를 저장한다
+    html DOM은 노드들을 정의하고 그 사이의 관계를 설명하는 역할을 한다
+    html 문서의 정보는 노드트리라는 계층적인 구조에 저장된다
+    노드트리는 노드들의 집합이며 노드간의 관계를 보여준다
+    노드트리는 최상위 레벨인 루트노드부터 시작하고 가장 낮은 레벨인 텍스트 노드까지 내려간다
+    html DOM을 이용하여 노드트리에 포함된 모든 노드에 접근할 수 있다
+
+    노드종류
+    문서노드(document node) : 문서 전체를 나타내는 노드
+    요소노드(element node) : html 요소는 요소노드이며 속성 노드를 가질 수 있는 유일한 노드
+    속성노드(attribute node) : html 요소의 속성은 속성노드이며 요소노드에 관한 정보를 가지고 있다
+    텍스트노드(text node) : html문서 내 모든 텍스트는 텍스트 노드
+    주석노드(comment node) : html문서의 모든 주석은 주석노드
+
+    노드간의 관계
+    모든노드 / 요소노드만
+    parentNode / parentElement : 부모노드
+    childNodes / children : 자식 노드 리스트
+    firstChild / firstElementChild : 첫번째 자식 노드
+    lastChild / lastElementChild: 마지막 자식 노드
+    nextSibling / nextElementSibling : 다음 형제 노드
+    previousSibling / previousElementSibling : 이전 형제 노드
+
+    익스플로러를 제외한 대부분의 브라우저는 요소와 요소 사이의 빈 공백 또는 개행을 텍스트 노드로 처리한다
+    따라서 노드간의 관계에 텍스트 노드가 중간에 사용되면 노드 이동이 불명확해질 수 있다    
+
+    노드교체 복제 생성 제거 추가 메소드를 이용하여 html문서에 동적인 변화를 줄 수 있다
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <nav id="gnb">
+            <ul>
+                <li class="first">내용1</li>
+                <li>내용2</li>
+                <li>내용3</li>
+            </ul>
+        </nav>
+    </div>
+    <script>
+        'use strict'
+        //다 읽히면 다음 메소드를 실행해라
+        window.onload = function(){
+            const gnb = document.getElementById('gnb');
+            console.log(gnb)
+
+            //노드간의 관계
+            console.log(gnb.parentNode);
+            console.log(gnb.parentElement);
+
+            console.log(gnb.childNodes)
+            console.log(gnb.childNodes[0])
+            console.log(gnb.children)
+            console.log(gnb.children[0])
+
+            console.log(gnb.children[0].firstChild)
+            console.log(gnb.children[0].firstElementChild)
+
+            console.log(gnb.children[0].lastChild)
+            console.log(gnb.children[0].lastElementChild)
+
+            console.log(gnb.children[0].children[1].nextSibling)
+            console.log(gnb.children[0].children[1].nextElementSibling)
+
+            console.log(gnb.children[0].children[1].previousSibling)
+            console.log(gnb.children[0].children[1].previousElementSibling)
+        }
+    </script>   
+</body>
+</html>

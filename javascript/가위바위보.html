@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict'
+        while(true){
+            const user = prompt("가위 바위 보 중 하나를 입력하시오");
+            const random = Math.floor(Math.random() * 2 + 1);
+            let computer;
+            switch(random){
+                case 0: computer = "가위"; break;
+                case 1: computer = "바위"; break;
+                case 2: computer = "보"; break;
+            }
+
+            let res;
+            switch(user){
+                case "가위":
+                    switch(computer){
+                        case "가위": res = "비김"; break;
+                        case "바위": res = "컴퓨터 승"; break;
+                        case "보": res = "유저 승"; break;
+                    }
+                    break;
+                case "바위":
+                    switch(computer){
+                        case "가위": res = "유저 승"; break;
+                        case "바위": res = "비김"; break;
+                        case "보": res = "컴퓨터 승"; break;
+                    }
+                    break;
+                case "보":
+                    switch(computer){
+                        case "가위": res = "컴퓨터 승"; break;
+                        case "바위": res = "유저 승"; break;
+                        case "보": res = "비김"; break;
+                    }
+                    break;
+            }
+
+            document.write(`<p>유저 : ${user}</p>
+                            <p>컴퓨터 : ${computer}</p>
+                            <p>결과 : ${res}</p>`)
+                            
+            if(res == "유저 승") break;
+    }
+    </script>
+</body>
+</html>

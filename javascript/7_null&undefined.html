@@ -1,0 +1,43 @@
+<!-- 
+    undefined
+    타입이 정해지지 않은 것을 의미한다
+    변수선언 후 값이 정해지지 않았을 경우에 발생
+
+    let a //타입을 알 수 없다 -> 방의 크기를 어떻게 정해? -> 실제 데이터는 힙에 저장되고 변수에는 주소만 저장하기 때문에 방의 크기를 정할 필요없다
+    console.log(a) // 값을 지정하지 않아서 타입을 모른다
+    예) 서버가 응답한 결과를 변수에 저장하고 출력하려 할때 서버에서 데이터가 안 넘어오면 undefined가 발생할 수 있다
+
+    
+    null
+    object 타입이며 값이 정해지지 않은 것을 의미
+    let a = 값
+    let a = [값, ..] //배열
+    let a = {값, ...} //객체 -> 이때 null발생 가능
+    let a = null; //아직 값이 정해지지 않았으며 객체 저장할 준비
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict';
+        //undefined
+        let num;
+        console.log(num);
+
+        //빈 데이터가 들어간 상태
+        let obj = {};
+        //아예 아무것도 안들어간 상태
+        let obj2 = null;
+        console.log(obj);
+        //typeof : 타입출력
+        console.log(typeof obj);
+        console.log(obj2);
+        console.log(typeof obj2);
+    </script>   
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!-- 
+    Navigator 객체
+    브라우저 공급자 및 버전 정보 등을 포함한 브러우저에 대한 정보를 저장하는 객체
+    사용자가 이용하는 브라우저 정보를 가져왔었는데 개인정보 보호때문에 제대로된 정보를 못 가져와서 잘안씀
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+     <script>
+         'use strict'
+         const success = function(location){
+             console.log(location.coords.latitude)
+             console.log(location.coords.longitude)
+         }
+         const fail = function(msg){
+            console.log(msg.code);ㅣㅐ
+        }
+        //브러우저가 실행되는 위도 경도를 얻어 온다
+        //성공적으로 위도 경도를 얻어 오면 success를 실행하고 실패하면 fail을 실행한다
+        //사이트에서 내 위치를 얻는 기능을 이걸로 구현
+         navigator.geolocation.getCurrentPosition(success, fail)
+     </script>
+ </body>
+ </html>

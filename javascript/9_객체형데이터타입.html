@@ -1,0 +1,40 @@
+<!-- 
+    객체형
+    여러 속성을 하나의 변수에 저장할 수 있도록 해주는 데이터 타입
+    -> key / value pair 구조로 이루어진 여러 데이터를 하나의 변수에 저장
+       ( value는 같을 수 있지만 key는 같을 수 없다 )
+    
+    객체형 변수 선언
+    let a = new Object()
+    또는
+    let a = {};
+
+    초기화
+    a = {"key" : value, "key" : value, .. }
+
+    객체 안 정보 확인
+    객체명.dir() -> 객체안의 모든 정보출력
+    객체명.key -> 해당 키의 value 출력
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+     <script>
+        const dog = {
+            "name" : "루시",
+            "age" : 9,
+            "weight" : 2.5
+        }
+        //dir() : 여러 정보를 주고 받을때 변수에 담아서 주고받기보다는 객체에 한꺼번에 담아서 보내고 안에 있는 내용은 dir()로 확인
+        console.dir(dog);
+        console.log(dog.name);
+        console.log(dog.age);
+        console.log(dog.weight);
+    </script>
+ </body>
+ </html>

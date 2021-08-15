@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict'
+        let res = 0;
+    while(true){
+            //램덤으로 두 숫자를 얻는다
+            let num1 = Math.floor(Math.random() * 100 + 1) 
+            let num2 = Math.floor(Math.random() * 100 + 1)
+
+            //램덤으로 연산자를 얻는다
+            let operator = Math.floor(Math.random() * 3)
+            switch(operator){
+                case 0: operator = "+"; break;
+                case 1: operator = "-"; break;
+                case 2: operator = "*"; break;
+                case 3: operator = "/"; break;
+            }
+
+            //만약에 0으로 나누는 연산이 만들어지면 건너뛴다
+            if(operator == "/" && num2 == 0) continue;
+
+            //사용자에게 답을 입력받는다
+            let answer = prompt(`${num1} ${operator} ${num2} =  (스코어: ${res})`);
+
+            ///정답을 계산한다
+            let correct;
+            switch(operator){
+                case "+": correct = num1 + num2; break;
+                case "-": correct = num1 - num2; break;
+                case "*": correct = num1 * num2; break;
+                case "/": correct = num1 / num2; break;
+            }
+
+            //사용자가 입력한 답과 정답을 비교하고 정답개수를 카운트한다
+            if(answer == correct){
+                res += 1;
+                document.write("맞았습니다 (스코어 : " + res + ")<br>")
+            }else{
+                document.write("틀렸습니다")
+            } 
+
+            //10문제 맞히면 종료한다
+            if(res == 10) break;
+    }  
+    </script>
+</body>
+</html>

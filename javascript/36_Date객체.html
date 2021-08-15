@@ -1,0 +1,45 @@
+<!-- 
+    Date객체
+    날짜 시간 등을 쉽게 처리할 수 있는 내장 객체
+
+    년도(year) 2자리로 표현 => 1900 ~ 1999, 4자리로 표현 => 2000 ~
+    월(month) 0 ~ 11 => 1월 ~ 12월
+    일(day) 1일 ~ 31일
+    시(hour) 0시 ~ 23시
+    분(minutes) 0분 ~ 59분
+    초(seconds) 0초 ~ 59초
+
+    Date 객체 만드는 방법
+    1. new Date() : 현재 날짜 시간을 저장하 객체가 만들어진다
+    2. new Date("날짜 문자열") : 해당 날짜와 시간을 가리키는 객체가 만들어진다
+    3. new Date(밀리초) : 1970년 1월 1일 0시부터 해당 밀리초만큼 지난 날짜 객체가 만들어진다 (timestamp)
+    4. new Date(년,월,일,시,분,초) : 해당 날짜와 시간을 가리키는 객체가 만들어진다
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        'use strict'
+        //현재 날짜와 시간을 가리키는 객체
+        //서버가 아닌 사용자 컴퓨터의 시간을 가져온다
+        console.log(new Date());
+        //해당 날짜와 시간을 가리키는 객체
+        console.log(new Date("2020-12-29"))
+        console.log(new Date(20,4,29))//90년대
+        console.log(new Date(2020,12,29,12,30,55))//2000년대
+        //timestamp
+        console.log(new Date(2000000000000))
+
+        const date = new Date();
+        console.log(date.getFullYear() + "년")
+        console.log(date.getMonth() + 1 + "월")
+        console.log(date.getDate() + "일")
+    </script>
+    
+</body>
+</html>

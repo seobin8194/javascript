@@ -1,0 +1,53 @@
+<!-- 
+    브라우저 객체 모델 (Browser Object Model)
+    웹 브라우저에 구현된 Javascript 객체 모델
+    비표준이기 때문에 브러우저마다 다른 부분이 존재하여 시용안함
+    window 객체의 프로퍼티로 조회할 수 있다
+
+    Window 객체
+    현재 웹 브라우저의 창이나 탭을 표현하는 객체
+    => 웹 브라우저는 window 객체를 이용하여 브라우저 창을 표현할 수 있다
+
+    open() : 팝업창을 띄우는 메소드지만 요즘에는 팝업차단때문에 사용안함
+    setTimeout(함수명, 일정시간) : 일정시간이 지난 후 매개변수로 지정한 함수를 실행
+    clearTimeout(setTimeout 객체명) : setTimeout()에서 실행된 함수 중지
+    setInterval(함수명, 일정시간) : 일정 시간마다 매개변수로 지정한 함수를 실행
+    clearInterval(setInterval 객체명) : setInterval()에서 실행된 함수 중지
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+     <script>
+         //window의 모든 프로퍼티 출력
+         for(let i in window){
+             console.log(`${i} : ${window[i]}`)
+         }
+
+         //setTimeout()
+         const hi = function(){
+             alert("안녕")
+         }
+         const st = window.setTimeout(hi, 2000)
+
+         //clearTimeout()
+         window.clearTimeout(st)
+         
+         //setInterval
+         const hello = function(){
+             console.log("안녕하세요")
+         }
+         const si = window.setInterval(hello, 2000)
+
+         //clearInterval()
+         const clearInter = function(){
+             clearInterval(si)
+         }
+     </script>
+     <button onclick="clearInter()">setInterval 중지</button>
+ </body>
+ </html>

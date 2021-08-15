@@ -1,0 +1,53 @@
+<!-- 
+    노드추가
+    appendChild() : 새로운 노드를 해당 노드의 자식노드 리스트 맨 마지막에 추가
+    insertBefore() : 새로운 노드를 특정 자식 노드 바로 앞에 추가
+    insertData() : 새로운 노드를 텍스트 데이터에 새로운 텍스트로 추가
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="item1">java</p>
+    <p id="item2">jquery</p>
+    <hr>
+    <div id="list">
+        <p id="server">node.js</p>
+        <p>css</p>
+        <p>html</p>
+    </div>
+    <hr>
+    <p id="text">지금</p>
+    <hr>
+    <button onclick="appendNode()">노드추가1</button>
+    <button onclick="insertNode()">노드추가2</button>
+    <button onclick="appendText()">텍스트 추가</button>
+
+    <script>
+        'use strict'
+        //parent.appendChild(newNode)
+        const appendNode = function(){
+            const parent = document.getElementById('list');
+            const newItem = document.getElementById('item1')
+            parent.appendChild(newItem)
+        }
+        //parent.insertNode(newNode, childNode)
+        const insertNode = function(){
+            const parent = document.getElementById('list')
+            const serverItem = document.getElementById('server')
+            const newItem = document.getElementById('item2')
+            //serverItem 전에 newItem을 삽입
+            parent.insertBefore(newItem, serverItem);
+        }
+        //텍스트노드.insertData(offset, 텍스트)
+        const appendText = function(){
+            const text = document.getElementById('text').firstChild
+            text.insertData(0, "아주 피곤한 ")
+        }
+    </script>  
+</body>
+</html>

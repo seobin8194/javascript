@@ -1,0 +1,49 @@
+<!-- 
+    제어문 - 조건문
+
+    switch문
+    특정한 값과 일치하는 것을 찾을때 유용
+    switch문은 if ~ else if문과 마찬가지로 주어진 조건에 따라 프로그램이 다른 명령을 수행하도록 하는 조건문이다
+    if문보다 처리속도가 빠르다
+
+    switch(변수){
+        case 값1 : 
+           변수와 값1이 일치할 경우 실행할 문장
+           break;
+        case 값2 : 
+           변수와 값2이 일치할 경우 실행할 문장
+           break;
+        ...
+        default :
+           비교값이 모두 일치하지 않을 경우 실행할 문장
+    }
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+     <script>
+         'use strict';
+         let input = prompt("아동 청소년 성인 중 선택하시오");
+         switch(input){
+             case "성인":
+                 input += " 입장료 5000원";
+                 break;
+             case "청소년":
+                 input += " 입장료 2000원";
+                 break;
+                 case "아동":
+                 input += " 입장료 무료";
+                 break;
+             default :
+             alert("입력값을 확인하세요")
+             input = "입력값을 확인하세요"
+         }
+         console.log(input);
+     </script> 
+ </body>
+ </html>

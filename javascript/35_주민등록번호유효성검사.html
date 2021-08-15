@@ -1,0 +1,57 @@
+<!-- 
+프롬프트를 이용하여 주민등록번호를 입력받고 유효한지 확인하는 프로그램
+
+1. 주민등록번호 각 자리에 2,3,4,5,6,7,8,9,2,3,4,5 숫자를 곱한다
+    0 0 1 0 1 1 3 0 6 8 5 1
+    * * * * * * * * * * * * 
+    2 3 4 5 6 7 8 9 2 3 4 5
+2. 곱한 값을 모두 더한다
+    0 + 0 + 4 + 0 + 6 + 7 + 24 + 0 + 12 + 24 + 20 + 5 = 102
+3. 더한 값을 11로 나눈 나머지 값을 구한다
+    102 % 11 = 3
+4. 나머지 값을 11에서 뺀다
+    11 - 3 = 8
+    (단 11에서 나머지 값을 뺀 값이 두자리라면 10으로 나눈 나머지 값을 구한다)
+5. 11에서 뺀 값이 주민등록번호 마지막 자리와 일치하면 유효한 주민등록번호입니다
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+     <script>
+         'use strict'
+        let jumin = prompt("주민등록번호를 입력하시오")
+        let juminArr = [];
+        let sum = 0;
+        let res;
+
+        //1 ~ 2단계
+        for(let i = 0; i < jumin.length - 1; i++){
+            let n;
+            //주민번호 1자리부터 12자리까지 각 자리 숫자를 짤라서 배열에 저장
+            juminArr[i] = jumin.substr(i,1)
+            //각 자리에 곱할 숫자를 계산한다
+            n = (i % 8) + 2
+            //각 자리에 계산한 숫자를 곱하고 배열에 다시 저장한다
+            juminArr[i] = juminArr[i] * n
+            //배열의 값들을 모두 더한다
+            sum += juminArr[i]
+        }
+
+        //3 ~ 4단계
+        res = 11 - (sum % 11);
+        if(res >= 10) res = res % 10
+
+        //5단계
+        if(jumin[12] == res){
+            console.log("유효한 주민등록번호입니다")
+        }else {
+            console.log("유효하지 않은 주민등록번호입니다")
+        }
+     </script>
+ </body>
+ </html>

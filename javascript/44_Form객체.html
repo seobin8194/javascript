@@ -1,0 +1,57 @@
+<!-- 
+    form 객체
+    일반적인 폼에 접근할때 사용
+    id또는 name을 이용하여 접근하거나 document.forms 컬렉션을 이용하여 접근
+
+    <form name="myForm": id="regForm" method="post" action="register.php">
+        아이디 : <input type="text" name="userId" id="id">
+        비번 : <input type="password" name="userPw" id="pw">
+        <input type="submit" value="전송">
+    </form>
+    - 폼에 접근
+      const frm = document.myForm
+      const frm = document.getElementById('regForm')
+      const frm = document.forms[0]
+    - 아이디 value에 접근
+      const id = frm.userId.value
+      const id = frm.elements[0].value
+      const id = frm.elements['userId'].value
+      const id = document.forms[0][0].value
+      const id = document.getElementById('id').value
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+     <form name='frm1'>
+         <input type="search" name="search" placeholder="검색어를 입력하시오">
+         <input type="submit" value="확인">
+     </form>
+     <hr/>
+     <form name="frm2">
+         <input type="text" name="userId" id="id" placeholder="아이디를 입력하시오" value="apple"><br/>
+         <input type="password" name="userPw" id="pw" placeholder="비번을 입력하시오">
+         <input type="submit" value="로그인">
+     </form>
+
+     <script>
+         'use strict'
+
+        // const frm2 = document.frm2
+        const frm2 = document.forms[1]
+        // const frm2 = document.forms['frm2']
+
+        //const id = frm2.userId.value
+        //const id = frm2.elements[0].value
+        //const id = frm2.elements['userId'].value
+        //const id = document.forms[1][0].value
+        const id = document.getElementById('id').value
+       
+        console.log(id)
+     </script>   
+ </body>
+ </html>

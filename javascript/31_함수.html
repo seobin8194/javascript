@@ -1,0 +1,167 @@
+<!-- 
+    사용자 정의 함수
+    하나의 특별한 목적의 작업을 수행하도록 설계된 독립적인 블록
+    함수는 필요할때마다 호출하여 해당 작업을 반복해서 수행할 수 있다 - > 코드의 재활용
+
+    함수를 만드는 방법
+    1. 이름만 존재하는 함수
+       * 함수 선언식
+         함수 선언 전에 함수를 호출해도 실행 가능
+         function 함수이름() {
+             함수가 호출됐을때 실행할 문장
+             ...
+         }
+       * 함수 표현식
+         함수 선언 전에 함수를 호출하면 에러
+         let 변수명 = function() {
+             함수가 호출됐을때 실행할 문장
+             ...
+         } 
+         함수이름() -> 함수호출
+       => 호이스팅
+       자바스크립트 엔진이 script 태그를 만나면 자바스크립트 파일을 읽고 선언된 함수를 메모리에 저장한다.
+       이 과정이 끝나면 코드가 위에서부터 차례대로 실행되며 '함수 선언식'으로 만들어진 함수는 메모리에 미리 저장되어 있기 때문에 문제없이 실행된다.
+       하지만 '함수 표현식'으로 만든 함수는 아직 값이 할당되기 전이기 때문에 에러가 발생한다.
+       즉 '함수 선언식'으로 선언한 함수가 호이스팅된다고 표현한다. '함수 표현식'을 사용하는 것을 권장한다
+
+
+    2. 매개변수가 있는 함수
+       function 함수이름(매개변수1, 매개변수2, ..){
+           함수가 호출되면 실행할 문장
+       }
+       const 함수이름 = function(매개변수1, 매개변수2, ..){
+           함수가 호출되면 실행할 문장
+       }
+       함수이름(값1, 값2, ..) -> 함수호출
+
+       * 나머지 매개변수
+         생략 접두사 ...를 사용해서 특정 위치의 인수부터 마지막 인수까지 한번에 저장할 수 있다
+         function 함수이름(매개변수1, ...매개변수2){
+             함수가 호출되면 실행할 문장
+         }
+         -> 매개변수 1에 일대일 대응해서 값을 저장하고 나머지 값은 매개변수2에 배열형태로 저장한다
+
+       * 디폴트 매개변수
+         매개변수의 값을 정하지 않으면 대신 기본값을 매개변수에 저장
+         function 함수이름(매개변수1 = 값1, 매개변수2 = 값2, ..){
+            함수가 호출되면 실행할 문장
+         }
+
+
+    3. 리턴 값이 있는 함수
+       function 함수이름(매개변수1, ..){
+           함수가 호출되면 실행할 문장
+           return 값
+       }
+       변수 = 함수이름(값1, ..) -> 함수를 호출하고 리턴값을 변수에 저장
+
+
+    * 함수를 만들고 직접 호출하는 함수
+      (function(){
+          실행할 문장
+      })();
+
+
+    * 화살표 함수
+      ECMA6에 추가됨
+      function 키워드를 사용하여 함수를 만드는 방법보다 간단
+      항상 익명
+      1) 매개변수가 없는 경우
+         const 상수명 = () => 함수가 호출되면 실행할 문장
+      2) 매개변수가 있는 경우
+         const 상수명 = 매개변수 => 실행할 문장
+         const 상수명 = (매개변수1, 매개변수2) => 함수가 호출되면 실행할 문장
+      3) 리턴값이 있는 경우
+         const 상수명 = () => {
+             실행할 문장
+             return 값
+         }
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+     <script>
+         'use strict'
+         //호이스팅 가능
+         func1();
+         //선언전 호출 불가
+         //func2();
+
+         //함수 선언식
+         function func1() {
+             console.log("func1() 호출")
+         }
+         func1();
+
+         //함수 표현식
+         const func2 = function(){
+             console.log("func2() 호출")
+         }
+         func2();
+
+         //매개변수가 있는 함수
+         function func3(start, end){
+             let sum = 0;
+             for(let i = start; i <= end; i++){ sum += i }
+             console.log(`${start}부터 ${end}까지 합은 ${sum}입니다`)
+         }
+         func3(1,100)
+
+         //나머지 매개변수
+         function func4(n1, n2, ...n3){
+             console.log(n1)
+             console.log(n2)
+             console.log(n3)
+         }
+         func4(1,2,3,4,5,6,7,8,9,10)
+         function func5(...jumsu){
+             for(let i of jumsu){
+                console.log(i)
+             }  
+         }
+         func5(100,90,80,60,70)
+
+         //디폴트 매개변수
+         function func6(num1 = 1, num2 = 1){
+             console.log(`${num1}이랑 ${num2}`)
+         }
+         func6()
+
+         //리턴값이 있는 함수
+         function func7(start,end){
+             let sum = 0;
+             for(let i = start; i <= end; i++){
+                 sum += i
+             }
+             return sum;
+         }
+         const sum = func7(1,10)
+         console.log(sum)
+
+         //함수를 만들고 직접 호출하는 함수
+        //  (function (){
+        //      console.log("함수만들고 호출!!")
+        //  })();
+
+         //화살표함수
+         const func8 = () => console.log("화살표 함수")
+         const func9 = (x,y) => console.log("매개변수는 " + x + "와 " + y)
+         const func10 = (start,end) => {
+             let sum = 0;
+             for(let i = start; i <= end; i++){
+                 sum += i
+             }
+             return sum
+         }
+         func8();
+         func9(1,2)
+         const sum2 = func10(1,10)
+         console.log(sum2)    
+     </script>
+ </body>
+ </html>

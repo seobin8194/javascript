@@ -1,0 +1,40 @@
+<!-- 
+    노드제거
+    removeChild() : 자식노드 리스트에서 특정 자식노드를 제거
+                    성공적으로 노드가 제거되면 노드를 반환
+                    노드를 제거할때 제거되는 노드의 모든 자식노드들도 다같이 제거
+    removeAttribute() : 속성의 이름을 이용하여 특정 속성 노드를 제거
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+    <div id="list">
+        <p>html</p>
+        <p id="item">css</p>
+        <p id="js" style="background-color: aquamarine;">javaScript</p>
+        <p>jquery</p>
+    </div>
+    <button onclick="removeNode()">노드제거</button>
+    <button onclick="removeAttr()">속성제거</button>
+     
+    <script>
+        //parent.removeChild(childNode)
+        const removeNode = function(){
+            const parent = document.getElementById('list');
+            const removeItem = document.getElementById('item');
+            const res = parent.removeChild(removeItem);
+            console.log(res)
+            console.log(res.nodeName);
+        }
+        const removeAttr = function(){
+            const js = document.getElementById('js')
+            js.removeAttribute('style')
+        }
+    </script>
+ </body>
+ </html>

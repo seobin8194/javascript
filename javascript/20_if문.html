@@ -1,0 +1,173 @@
+<!-- 
+    제어문 - 조건문
+    프로그램 내에서 주어진 조건의 결과에 따라 별도의 명령을 수행하도록 제어하는 실행문
+
+    if문
+    범위에 대한 조건을 줄때 유용
+    1. if문
+       if(조건식){
+           조건식의 결과가 참일때 실행할 문장
+       }
+    2. if ~ else문
+       if(조건식){
+           조건식의 결과 참일때 실행할 문장
+       }else {
+           조건식의 결과가 거짓일때 실행할 문장
+       }
+    3. if ~ else if문
+       if(조건식1){
+           조건식1의 결과가 참일때 실행할 문장
+       }else if(조건식2){
+           조건식2의 결과가 참일때 실행할 문장
+       }
+       ...
+       else {
+           조건식의 결과가 모두 거짓일때 실행할 문장
+       }
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+ </head>
+ <body>
+     <script>
+         'use strict';
+        //if문 - 성인판단
+        //  const age = Number(prompt("나이를 입력하시오"));
+        //  if(age > 19){
+        //      console.log("성인입니다")
+        //  }
+        //  console.log("프로그램을 종료합니다");
+
+         //if문 - 혈액형 판단
+        //  const blood = prompt("혈액형을 입력하시오")
+        //  const rh = prompt("RH+ 또는 RH-를 선택하시오");
+        //  if(blood == "A형"){
+        //      if(rh == "RH+"){
+        //          console.log("당신은 RH+ A형입니다")
+        //      }
+        //      if(rh == "RH-"){
+        //          console.log("당신은 RH- A형입니다")
+        //      }
+        //  }
+        //  if(blood == "B형"){
+        //      if(rh == "RH+"){
+        //          console.log("당신은 RH+ B형입니다")
+        //      }
+        //      if(rh == "RH-"){
+        //          console.log("당신은 RH- B형입니다")
+        //      }
+        //  }
+        //  if(blood == "O형"){
+        //      if(rh == "RH+"){
+        //          console.log("당신은 RH+ O형입니다")
+        //      }
+        //      if(rh == "RH-"){
+        //          console.log("당신은 RH- O형입니다")
+        //      }
+        //  }
+        //  if(blood == "AB형"){
+        //      if(rh == "RH+"){
+        //          console.log("당신은 RH+ AB형입니다")
+        //      }
+        //      if(rh == "RH-"){
+        //          console.log("당신은 RH- AB형입니다")
+        //      }
+        //  }
+
+         //if ~ else문 - 성인 판단
+        //  const age = prompt("나이를 입력하세요");
+        //  if(age > 19){
+        //      console.log("성인입니다")
+        //  }else{
+        //      console.log("미성년자입니다")
+        //  }
+
+        //if ~ else문 - 혈액형 판단
+        //  const blood = prompt("혈액형을 입력하시오")
+        //  const rh = prompt("RH+ 또는 RH-를 선택하시오");
+        //  if(blood == "A형"){
+        //      if(rh == "RH+"){
+        //          console.log("당신은 RH+ A형입니다")
+        //      }else{
+        //          console.log("당신은 RH- A형입니다")
+        //      }
+        //  }
+        //  if(blood == "B형"){
+        //      if(rh == "RH+"){
+        //          console.log("당신은 RH+ B형입니다")
+        //      }else{
+        //          console.log("당신은 RH- B형입니다")
+        //      }
+        //  }
+        //  if(blood == "O형"){
+        //      if(rh == "RH+"){
+        //          console.log("당신은 RH+ O형입니다")
+        //      }else{
+        //          console.log("당신은 RH- O형입니다")
+        //      }
+        //  }
+        //  if(blood == "AB형"){
+        //      if(rh == "RH+"){
+        //          console.log("당신은 RH+ AB형입니다")
+        //      }else{
+        //          console.log("당신은 RH- AB형입니다")
+        //      }
+        //  }
+
+        //if ~ else if문 - 성인 판단
+        // const age = prompt("나이를 입력하세요");
+        // if(age > 19){
+        //     console.log("성인입니다")
+        // }else if(age > 14){
+        //     console.log("청소년입니다");
+        // }else if(age > 5){
+        //     consol.log("어린이입니다")
+        // }else{
+        //     console.log("유아입니다")
+        // }
+
+        //if ~ else if문 - 혈액형 판단
+         const blood = prompt("혈액형을 입력하시오")
+         const rh = prompt("RH+ 또는 RH-를 선택하시오");
+          if(blood == "A형"){
+             if(rh == "RH+"){
+                 console.log("당신은 RH+ A형입니다")
+             }else if(rh == "RH-"){
+                 console.log("당신은 RH- A형입니다")
+             }else {
+                 console.log("RH+ 나 RH-를 입력하시오")
+             }
+         }else if(blood == "B형"){
+             if(rh == "RH+"){
+                 console.log("당신은 RH+ B형입니다")
+             }else if(rh == "RH-"){
+                 console.log("당신은 RH- B형입니다")
+             }else {
+                 console.log("RH+ 나 RH-를 입력하시오")
+             }
+         }else if(blood == "O형"){
+             if(rh == "RH+"){
+                 console.log("당신은 RH+ O형입니다")
+             }else if(rh == "RH-"){
+                 console.log("당신은 RH- O형입니다")
+             }else {
+                 console.log("RH+ 나 RH-를 입력하시오")
+             }
+         }else if(blood == "AB형"){
+             if(rh == "RH+"){
+                 console.log("당신은 RH+ AB형입니다")
+             }else if(rh == "RH-"){
+                 console.log("당신은 RH- AB형입니다")
+             }else {
+                 console.log("RH+ 나 RH-를 입력하시오")
+             }
+         }else {
+            console.log("A형 B형 AB형 O형 형태로 입력하세요");
+         }  
+     </script>
+ </body>
+ </html>
